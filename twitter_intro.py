@@ -24,3 +24,23 @@ lon_trends_set = set([trend['name']
 common_trends = set.intersection(dub_trends_set, lon_trends_set)
 
 print common_trends
+
+NYC_WOE_ID = 2459115
+BER_WOE_ID = 638242
+
+nyc_trends = api.trends_place(NYC_WOE_ID)
+ber_trends = api.trends_place(BER_WOE_ID)
+
+nyc_trends_set = set([trend['name']
+                      for trend in nyc_trends[0]['trends']])
+
+ber_trends_set = set([trend['name']
+                      for trend in ber_trends[0]['trends']])
+
+foreign_trends = set.intersection(nyc_trends_set, ber_trends_set)
+
+print foreign_trends
+
+dif_trends = set.difference(nyc_trends_set, ber_trends_set)
+
+print dif_trends
