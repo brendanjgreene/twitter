@@ -1,10 +1,7 @@
 import json
 import tweepy
 from tweepy import OAuthHandler
-from settings import CONSUMER_KEY
-from settings import CONSUMER_SECRET
-from settings import OAUTH_TOKEN
-from settings import OAUTH_TOKEN_SECRET
+from settings import CONSUMER_KEY, CONSUMER_SECRET, OAUTH_TOKEN_SECRET, OAUTH_TOKEN
 
 
 auth = OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
