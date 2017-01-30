@@ -3,6 +3,7 @@ import tweepy
 from tweepy import OAuthHandler
 from settings import CONSUMER_KEY, CONSUMER_SECRET, OAUTH_TOKEN_SECRET, OAUTH_TOKEN
 from collections import Counter
+from prettytable import PrettyTable
 
 # i have my keys and oauths to a settings file for privacy
 
@@ -29,7 +30,11 @@ hashtags = [hashtag['text']
 words = [w for t in status_texts
          for w in t.split()]
 
-for entry in [screen_names, hashtags, words]:
-    counter = Counter(entry)
-    print counter.most_common()[:10]  # the top 10 results
-    print
+for label, data in (('Text', status_texts),
+                    ('Screen Name', screen_names),
+                    ('Word', words)):
+    table = PrettyTable(field_names=[label, 'Count'])
+    counter = Counter(data)
+    [ table.add_row(entry) for entry in counter.most_common()[:10] ]
+    table.align[label], table.align['Count'] = 'l', 'r' # align the columns
+    print table
