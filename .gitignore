@@ -1,1 +1,12 @@
 settings.py
+tweet_mining.json
+.Python
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/twitter.iml
+.idea/workspace.xml
+bin/
+include/
+lib/
+pip-selfcheck.json
