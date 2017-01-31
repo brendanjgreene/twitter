@@ -9,7 +9,7 @@ auth.set_access_token(OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
 
 api = tweepy.API(auth)
 
-user = api.get_user('@madonna')
+user = api.get_user('@SheltonJenn')
 
 print user.screen_name
 print user.followers_count
