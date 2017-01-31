@@ -33,3 +33,18 @@ print json.dumps(status_texts[0:5], indent=1)
 print json.dumps(screen_names[0:5], indent=1)
 print json.dumps(hashtags[0:5], indent=1)
 print json.dumps(words[0:5], indent=1)
+
+
+def get_lexical_diversity(items):
+    return 1.0 * len(set(items)) / len(items)
+
+
+def get_average_words(tweets):
+    total_words = sum([len(tweet.split()) for tweet in tweets])
+    return 1.0 * total_words / len(tweets)
+
+
+print "Average words: %s" % get_average_words(status_texts)
+print "Word Diversity: %s" % get_lexical_diversity(words)
+print "Screen Name Diversity: %s" % get_lexical_diversity(screen_names)
+print "HashTag Diversity: %s" % get_lexical_diversity(hashtags)
