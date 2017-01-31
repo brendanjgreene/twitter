@@ -15,7 +15,7 @@ for tweet_line in tweets_file:
 
 print len(results)
 
-# create  a dataframe
+# create a dataframe
 statuses = pandas.DataFrame()
 
 # store the text values
