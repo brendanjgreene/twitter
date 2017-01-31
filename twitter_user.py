@@ -19,4 +19,6 @@ for friend in user.friends():
     print friend.screen_name
     print friend.followers_count
 
-
+for status in tweepy.Cursor(api.home_timeline).items(10):
+    # Process a tweet
+    print status.text
